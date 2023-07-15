@@ -60,7 +60,7 @@ mongoose.connect(process.env.MONGO_URL, {
 }).then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
 
-    /* ADD DATA ONE TIME */
+    /* ADD DATA ONLY ONE TIME. IF WANT TO REPLACE, THEN DELETE ON MONGODB AND RUN INDEX.JS IN SERVER AFTER UNCOMMENTING BELOW. */
     // User.insertMany(users);
     // Post.insertMany(posts);
 })
