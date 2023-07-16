@@ -42,5 +42,29 @@ const MyPostWidget = ({ picturePath }) => {
     const mediumMain = palette.neutral.mediumMain;
     const medium = palette.neutral.medium;
 
-    /* STOPPED AT 4:09:27 */
-}
+    /* Function that handles post and makes API call */
+    const handlePost = async () => {
+        const formData = new FormData();
+        formData.append("userId", _id);
+        formData.append("description", post);
+        if (image) {
+            formData.append("picture", image);
+            formData.append("picturePath", image.name);
+        }
+        /* Sends info to back-end. */
+        const response = await fetch(`http://localhost:3001/posts`, {
+            method: "POST",
+            headers: { Authorization: `Bearer ${token}`},
+            body: formData,
+        });
+        /* Back-end return lists of updated posts. */
+        const posts = await response.json();
+        /* Keeps/sets our list of posts */
+        dispatch(setPosts({ posts }));
+        /* Resets state after API call is done. */
+        setImage(null);
+        setPost("");
+    };
+
+
+};
