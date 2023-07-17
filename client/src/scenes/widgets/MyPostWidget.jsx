@@ -143,7 +143,7 @@ const MyPostWidget = ({ picturePath }) => {
                 </FlexBetween>
 
                 {isNonMobileScreens ? (
-                    <>
+                    <> {/* These do not have a function yet. */}
                         <FlexBetween gap="0.25rem">
                             <GifBoxOutlined sx={{ color: mediumMain}} />
                             <Typography color={mediumMain}>Clip</Typography>
