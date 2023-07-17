@@ -6,7 +6,7 @@ export const createPost = async (req, res) => {
     try{
         const { userId, description, picturePath } = req.body;
         const user = await User.findById(userId);
-        const newPOst = new Post({
+        const newPost = new Post({
             userId,
             firstName: user.firstName,
             lastName: user.lastName,
@@ -19,7 +19,7 @@ export const createPost = async (req, res) => {
             likes: {},
             comments: []
         })
-        await newPOst.save();
+        await newPost.save();
 
         const post = await Post.find();
         res.status(201).json(post);
