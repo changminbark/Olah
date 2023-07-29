@@ -1,4 +1,6 @@
-# **Olah**, a social media platform for sports-lovers to meet up and exercise!
+# Olah 
+## a social media platform for sports-lovers to meet up and exercise!
+---
 
 A fullstack responsive website project that uses MERN and revolves a business idea. I learned to create this using Ed Roh's tutorial.
 
